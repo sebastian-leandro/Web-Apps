@@ -1,0 +1,29 @@
+@use '../../../_css/queries.scss' as *;
+
+.nav {
+  padding: 36px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  @include mid-break {
+    padding: 36px 16px;
+  }
+  @include small-break {
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.hide {
+  display: none;
+}
+

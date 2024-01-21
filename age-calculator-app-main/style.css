@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+
+
+body {
+    background-color: var(--Off-white);
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+.calculator {
+    width: 50vw;
+    height: 75vh;
+    background-color: var(--White);
+    border-radius: 16px 16px 150px 16px;
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 1);
+}
+
+
+header {
+    border-bottom: 1px solid var(--Light-grey);
+    padding-bottom: 1.5em;
+    width: 80%;
+    margin-left: 2em;
+    position: relative;
+    
+}
+
+.img {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--Purple);
+    display: flex;
+    bottom: -2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.img img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.-nav--container {
+    display: flex;
+    height: 30%;
+    margin-top: 2em;
+}
+
+
+.-nav--item p {
+    color: var(--Smokey-grey);
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+
+.-nav--item input {
+    width: 50%;
+    padding: 0.55rem 1.33rem;
+    border-radius: 5px;
+    font-size: 18px;
+    color: var(--Smokey-grey);
+    box-shadow: 0 2px 10px var(--Light-grey);
+    outline: none;
+    border: 0.1rem solid var(--Light-grey);
+}
+
+
+
+.body {
+
+    width: 100%;
+    height: 60%;
+    display: flex;
+    margin-top: 1.5em;
+    flex-direction: column;
+}
+
+
+.body--item {
+    margin-left: 2em;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1em;
+    align-items: center;
+    text-align: center;
+}
+
+.body--item span {
+    font-size: 4.5rem;
+    align-self: flex-end;
+    font-weight: 700;
+    color: var(--Purple);
+}
+
+.body--item p {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+
+
+
+.-nav--item input:focus {
+    border: 0.1rem solid var(--Purple);
+}
+
+button {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    background-color: #282828;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: .33em;
+    top: 0;
+    bottom: 0;
+    color: #e8e8e8;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+#result {
+    margin-left: 1em;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+}
+
+
+
+.wrong {
+    border: 0.1rem solid var(--Light-red) !important;
+    box-shadow: 0 2px 10px var(--Light-red) !important;
+}
+
+
+
+
+
+@media (max-width:768px){
+    .calculator {
+        width: 100%;
+        border-radius: 0;
+        height: 75vh;
+    }
+
+    .header {
+        width: 100%;
+        height: 30%;
+        padding-bottom: 3em;
+    }
+
+    .-nav--container {
+        gap: .5em;
+        height: 40%;
+    }
+
+    .-nav--item input {
+        width: 100%;
+    }
+    .-nav--container  {
+        width: 100%;
+    }
+}

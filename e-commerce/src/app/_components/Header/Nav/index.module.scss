@@ -1,0 +1,45 @@
+@use '../../../_css/queries.scss' as *;
+
+.list {
+  display: flex;
+  gap: calc(var(--base) / 4) var(--base);
+  align-items: center;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 100ms linear;
+  visibility: visible;
+  justify-content: flex-end;
+  > * {
+    text-decoration: none;
+  }
+  @include small-break {
+    justify-content: center;
+  }
+}
+
+.list > a {
+  position: relative;
+  padding: 0.020rem 0;
+  color: var(--color-dark-500);
+}
+
+.list > a::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1.75px;
+  border-radius: 9999px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-dark-500-100);
+  transition: width 300ms ease-in-out;
+}
+
+.list > a:hover::before {
+  width: 100%;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Framework CSS -->
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    
+
+    <div class="weather-container">
+        <div class="weather-box">
+            <div class="weather">
+                <div class="weather-head">
+                    <input type="text" placeholder="Enter city..." id="input-search" required>
+                    <h2 class="city-name" id="city-name"></h2>
+                    <h3 id="weather-condition"></h3>
+                    <img id="weather-image" src="" alt="Weather image" loading="lazy">
+                </div>
+                <div class="weather-body">
+                    <h3 id="weather"></h3>
+                    <p id="weather-description"></p>
+                </div>
+                <button onclick="weatherDay()">
+                    <div>
+                        <span>Click</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
