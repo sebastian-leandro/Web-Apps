@@ -8,7 +8,7 @@
   overflow-x: hidden;
   scrollbar-width: none;
   transition: all 300ms ease;
-  &::-webkit-scrollbar {
+  .sidebar::-webkit-scrollbar {
     display: none;
   }
   .logo {
@@ -20,15 +20,15 @@
     z-index: 500;
     padding-bottom: 20px;
     box-sizing: content-box;
-    span {
-      color: var(--dark);
-    }
-    .icon {
-      min-width: 60px;
-      display: flex;
-      justify-content: center;
-      font-size: 2.2rem;
-    }
+      span {
+        color: var(--dark);
+      }
+      .icon {
+        min-width: 60px;
+        display: flex;
+        justify-content: center;
+        font-size: 2.2rem;
+      }
   }
 
   .side {
@@ -37,54 +37,52 @@
 
     li {
       height: 48px;
-      background-color: transparent;
+      background: transparent;
       margin-left: 6px;
       border-radius: 48px 0 0 48px;
       padding: 4px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        background: var(--light);
+        display: flex;
+        align-items: center;
+        border-radius: 48px;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow-x: hidden;
+        transition: 300ms all ease;
+      }
     }
 
-    a {
-      width: 100%;
-      height: 100%;
-      background: var(--light);
-      display: flex;
-      align-items: center;
-      border-radius: 48px;
-      font-size: 16px;
-      color: var(--dark);
-      white-space: nowrap;
-      overflow-x: hidden;
-      transition: 300ms all ease;
+    li.active {
+      background-color: var(--grey);
+      position: relative;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        top: -40px;
+        right: 0;
+        box-shadow: 20px 20px 0 var(--grey);
+        z-index: -1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        bottom: -40px;
+        right: 0;
+        box-shadow: 20px -20px 0 var(--grey);
+        z-index: -1;
+      }
     }
   }
 }
-
-.active {
-  background-color: var(--grey) !important;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    top: -40px;
-    right: 0;
-    box-shadow: 20px 20px 0 var(--grey);
-    z-index: -1;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    bottom: -40px;
-    right: 0;
-    box-shadow: 20px -20px 0 var(--grey);
-    z-index: -1;
-  }
-  a {
-    color: var(--success) !important;
-  }
-  }
-
