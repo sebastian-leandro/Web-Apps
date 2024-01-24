@@ -16,7 +16,7 @@ function Navbar (): React.ReactNode {
             </button>
           </div>
         </form>
-        <input type="checkbox" id='theme' className={classes.theme} hidden />
+        <input type="checkbox" id='theme' className={classes.theme} onClick={(): void => { document.body.classList.toggle('dark') }} hidden />
         <label htmlFor="theme" className={classes.toggle}></label>
         <a href="#" className={classes.notify}>
           <CiBellOn className={`${classes.bx} ${classes.bell} `} />

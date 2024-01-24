@@ -50,6 +50,9 @@ nav {
         outline: none;
         width: 100%;
         color: var(--dark);
+        @media only screen and (max-width: 576px) {
+          display: none;
+        }
       }
 
       button {

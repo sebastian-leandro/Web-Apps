@@ -1,0 +1,61 @@
+.insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+
+  li {
+    padding: 24px;
+    background-color: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    cursor: pointer;
+
+    .bx {
+      height: 80px;
+      width: 80px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      font-size: 36px;
+    }
+
+    .info {
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      p {
+        color: var(--dark);
+      }
+    }
+  }
+
+  li:nth-child(1) .bx {
+    background-color: var(--light-primary);
+    color: var(--primary);
+  }
+
+  li:nth-child(2) .bx {
+    background-color: var(--light-warning);
+    color: var(--warning);
+  }
+
+  li:nth-child(3) .bx {
+    background-color: var(--light-success);
+    color: var(--success);
+  }
+
+  li:nth-child(4) .bx {
+    background-color: var(--light-danger);
+    color: var(--danger);
+  }
+}

@@ -1,0 +1,59 @@
+.reminders {
+  flex-grow: 1;
+  flex-basis: 300px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    svg {
+      cursor: pointer;
+      font-size: 1.8rem;
+    }
+  }
+
+  .task {
+    width: 100%;
+
+    li {
+      width: 100%;
+      margin-bottom: 16px;
+      background-color: var(--grey);
+      padding: 14px 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        margin-left: 6px;
+      }
+      svg {
+        cursor: pointer;
+        font-size: 1.8rem;
+      }
+    }
+    li.completed {
+      border-left: 10px solid var(--success);
+    }
+    li.notCompleted {
+        border-left: 10px solid var(--danger);
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
