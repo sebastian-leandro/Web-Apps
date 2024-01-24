@@ -8,7 +8,7 @@ import { IoIosSettings } from 'react-icons/io'
 export const nav = [
   {
     id: 0,
-    icon: <MdOutlineSpaceDashboard />,
+    icon: <MdOutlineSpaceDashboard/>,
     title: 'Dashboard'
   },
   {

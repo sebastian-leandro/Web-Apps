@@ -6,18 +6,21 @@ import classes from './Sidebar.module.scss'
 import { nav } from '../../constants'
 
 function Sidebar (): React.ReactNode {
-  const [toggle, setToggle] = useState(false)
+  const [close, setClose] = useState(false)
   useEffect(() => {
-    const handleWidth = (): void => { setToggle(window.innerWidth < 768) }
-    handleWidth()
-
-    window.addEventListener('resize', handleWidth)
-    return () => { window.removeEventListener('resize', handleWidth) }
+    window.innerWidth <= 768 ? setClose(true) : setClose(false)
+    window.addEventListener('resize', () => {
+      window.innerWidth <= 768 ? setClose(true) : setClose(false)
+    })
+    return () => {
+      window.removeEventListener('resize', () => {
+        window.innerWidth <= 768 ? setClose(true) : setClose(false)
+      })
+    }
   }, [])
-
   return (
     <>
-      <div className={`${classes.sidebar} ${toggle ? 'w-[60px]' : 'w-[230px]'}`}>
+      <div className={`${classes.sidebar} ${close ? `${classes.close}` : ''}`}>
         <a href='/' className={classes.logo}>
           <MdOutlineSpaceDashboard className={classes.icon} />
           <span>Dashboard</span>
@@ -26,7 +29,8 @@ function Sidebar (): React.ReactNode {
           {nav.map((item) => (
             <li key={item.id} className={item.id === 2 ? `${classes.active}` : ''}>
               <a href='/'>
-                {item.icon} {item.title}
+                {item.icon}
+                {item.title}
               </a>
             </li>
           ))}

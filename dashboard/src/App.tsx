@@ -1,9 +1,10 @@
-import { Sidebar } from './components'
+import { Sidebar, Main } from './components'
 
 function App (): React.ReactNode {
   return (
     <>
       <Sidebar />
+      <Main />
     </>
   )
 }
