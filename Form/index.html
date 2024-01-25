@@ -8,59 +8,29 @@
 </head>
 <body>
 
-
-    <div class="container">
-
-
-        <div class="gradient">
-            <div class="background__gradient">
-                <h1>Welcome to the Club !</h1>
-                <p>We give you the welcome to the our website let's make incredible things</p>
+    <section class="container">
+      <form class="form">
+        <div class="content">
+            <div class="title">
+                <h1>Login</h1>
+            </div>
+            <div class="inputs">
+                <div class="input">
+                  <input type="email" name="email" id="email" required>
+                  <label for="email">Email</label>
+                </div>
+                <div class="input">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="btns">
+                  <button type="submit" class="login" id="login">Login</button>
+                  <button type="button" class="register" id="register">Reset</button>
+                </div>
             </div>
         </div>
-
-        <div class="form">
-
-            <h2>Sign Up</h2>
-            <div class="group">
-                <label for="to">To:</label>
-                <div class="bg__input">
-                    <input type="text" placeholder="Random" id="to" required autocomplete="off">
-                </div>
-            </div>
-
-
-            <div class="group">
-                <label for="email">Email: </label>
-                <div class="bg__input">
-                    <input type="text" placeholder="Email..." id="email" required autocomplete="off">
-                </div>
-            </div>
-
-            <div class="group">
-                <label for="message">Message:</label>
-                <div class="bg__input">
-                    <textarea name="message" id="message" required autocomplete="off"></textarea>
-                </div>
-            </div>
-
-            <div class="send__respond">
-                <span class="respond">The Email Was send successfully</span>
-                <button class="btn__form" type="button" onclick="sendEmail()">Send</button>
-            </div>
-
-
-        </div>
-
-
-        
-    </div>
-
-
-
-
-
-
+      </form>
+    </section>
 
     <script src="index.js"></script>
     
