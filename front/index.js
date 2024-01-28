@@ -1,1 +1,0 @@
-window.addEventListener("load",()=>{document.getElementById("loader").classList.add("hidden"),document.querySelector(".bg-loader").classList.add("hidden")})
