@@ -1,13 +1,12 @@
-// Nav Effect
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector(".nav");
-    if(window.scrollY > 10) {
-        nav.classList.add("nav--scroll");
-    }else {
-        nav.classList.remove("nav--scroll");
-    }
-});
+const $ = selector => document.querySelector(selector);
 
+// Nav Effect
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    $('header').classList.add('effect');
+  }
+})
 
 // Scroll Reveal 
 
