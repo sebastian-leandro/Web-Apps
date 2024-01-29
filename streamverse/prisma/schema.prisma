@@ -1,0 +1,20 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  imageUrl String
+  externalUserId String @unique
+  bio String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt 
+}
+
