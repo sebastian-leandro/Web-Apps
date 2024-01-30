@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background-color: #06061b;
 }
 
@@ -64,8 +65,13 @@ body {
 .grid--container .grid--item {
     cursor: pointer;
     border-radius: 16px;
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 500ms all ease-in-out;
 }
-
 
 .grid--container .grid--item img {
     width: 100%;
@@ -73,7 +79,7 @@ body {
     object-fit: cover;
     border-radius: 16px;
     transition: 500ms transform ease-in-out;
-}
+  }
 
 .grid--item:nth-child(2) {
     grid-column-start: span 2;
@@ -118,7 +124,7 @@ body {
 /* Hover */
 
 .grid--item img:hover {
-    transform: scale(1.033);
+    transform: scale(1.015);
 }
 
 /* Effects */
@@ -127,4 +133,13 @@ body {
     background-color: #06061bd2;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+}
+
+.loading {
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: static !important;
+  transition: 500ms all ease-in-out !important;
 }

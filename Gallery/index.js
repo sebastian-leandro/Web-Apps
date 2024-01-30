@@ -1,4 +1,5 @@
 const $ = selector => document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
 
 // Nav Effect
 
@@ -8,16 +9,27 @@ window.addEventListener('scroll', () => {
   }
 })
 
-// Scroll Reveal 
+function loadImages(target) {
+  target.classList.add('loading');
+}
 
-const sr = ScrollReveal({
-    origin: "bottom",
-    distance: "50px",
-    duration: 500,
-    reset: false,
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.75,
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadImages(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+const observe = $$('.grid--item')
+observe.forEach(item => {
+  observer.observe(item);
 });
 
-
-sr.reveal(".grid--item", {
-    delay:"500",
-});
