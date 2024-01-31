@@ -1,0 +1,119 @@
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  .calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    padding: 30px;
+    height: 520px;
+    width: 380px;
+    border-radius: 10px;
+    background-color: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(0 0 5px rgba(21, 0, 66, 0.5));
+
+    
+    .screen {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 64px;
+      height: 100%;
+      padding-right: 0.8rem ;
+      margin-bottom: 0.5rem;
+      border: 1px solid #1d1d1d6f;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);  
+
+
+      .display {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 1.5rem;
+      }
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 0.5rem;
+      width: 100%;
+      height: 100%;
+      
+      button {
+        padding: 0.6rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 300ms ease;
+        min-width: 44.75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: hsl(100, 100%, 100%);
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+          color: #fff;
+        }
+      }
+
+      .row {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+      }
+
+      .row:first-child {
+        .delete:first-child {
+          width: 100%;
+        }
+        .delete:last-child {
+          width: 100%;
+        }
+
+        .row:last-child {
+          .point {
+            width: 100%;
+          }
+        }
+      }
+
+      .symbol {
+        background-color: rgb(245, 192, 79);
+        color: #F7F7F7;
+        text-align: center;
+      }
+
+      .equal {
+        background-color: rgb(221, 100, 100);
+        color: #F7F7F7;
+      }
+    }
+    
+  }
+} 
