@@ -77,6 +77,15 @@ function handleNumber(numberString){
   else buffer += numberString;
 }
 
+document.addEventListener('keydown', (event) => {
+  if (event.key >= 0 && event.key <= 9) { handleNumber(event.key) }
+  else if (event.key === '+' || event.key === '−' || event.key === '×' || event.key === '÷') { handleMath(event.key) }
+  else if (event.key === 'Enter' || event.key === '=') { handleSymbol('=') }
+  else if (event.key === 'Backspace') { handleSymbol('←') }
+  else if (event.key === 'Escape') { handleSymbol('C') }
+  screen.textContent = parseFloat(buffer)
+})
+
 function init(){
   document.querySelector(".calc-buttons").addEventListener("click", (event) => { 
     if(event.target.classList.contains("calc-button")) { buttonClick(event.target.innerText) } 
