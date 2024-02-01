@@ -127,7 +127,13 @@ nav {
     border-radius: 50%;
   }
 
+
   .bx {
     font-size: 1.7rem;
+    cursor: pointer;
+  }
+
+  .light {
+    color: var(--dark);
   }
 }
